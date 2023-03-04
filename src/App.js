@@ -26,20 +26,27 @@ const App = () => {
 
     // filter default contact list and ONLY update filtered list
     const newList = contacts.filter((contact) => {
-      return contact.name.match(e.target.value);
+      // Searching for contact name is now case-insensitive
+      return contact.name.toLowerCase().match(e.target.value.toLowerCase());
     });
     setFilterContacts(newList);
   };
 
   // Map users (list) into returnable list
   const listContacts = filterContacts.map((contact) => (
-    <li key={contact.name}>{contact.name}</li>
+    // Information that represents a contact
+    <div key={contact.id}>
+      <li>{contact.name}</li>
+      <li>{contact.phone}</li>
+      <li>{contact.address.city}</li>
+      <br />
+    </div>
   ));
 
   // Return (render) listContacts and search bar
   return (
     <div>
-      <h1>{listContacts}</h1>
+      <h3>{listContacts}</h3>
       <input
         type="text"
         placeholder="Search Contacts"
