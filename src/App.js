@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import "./index.css";
 
 const App = () => {
   // Define hooks to use for setting/updating state variables
@@ -35,7 +36,7 @@ const App = () => {
   // Map users (list) into returnable list
   const listContacts = filterContacts.map((contact) => (
     // Information that represents a contact
-    <div key={contact.id}>
+    <div class="listContactBox" key={contact.id}>
       <li>{contact.name}</li>
       <li>{contact.phone}</li>
       <li>{contact.address.city}</li>
@@ -46,6 +47,7 @@ const App = () => {
   // Return (render) listContacts and search bar
   return (
     <div>
+      <h1 class="titleText">Contacts</h1>
       <h3>{listContacts}</h3>
       <input
         type="text"
