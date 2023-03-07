@@ -48,13 +48,13 @@ const App = () => {
   return (
     <div>
       <h1 class="titleText">Contacts</h1>
-      <h3>{listContacts}</h3>
       <input
         type="text"
         placeholder="Search Contacts"
         onChange={handleChange}
         value={searchValue}
       />
+      <h3>{listContacts}</h3>
     </div>
   );
 };
