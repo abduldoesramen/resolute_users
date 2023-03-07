@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import "./index.css";
+import TextField from "@mui/material/TextField";
 
 const App = () => {
   // Define hooks to use for setting/updating state variables
@@ -48,9 +49,11 @@ const App = () => {
   return (
     <div>
       <h1 class="titleText">Contacts</h1>
-      <input
+      <TextField
+        id="outlined-basic"
+        label="Search contacts"
+        variant="outlined"
         type="text"
-        placeholder="Search Contacts"
         onChange={handleChange}
         value={searchValue}
       />
