@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import "./index.css";
 import TextField from "@mui/material/TextField";
+import Box from "@mui/material/Box";
 
 const App = () => {
   // Define hooks to use for setting/updating state variables
@@ -38,9 +39,9 @@ const App = () => {
   const listContacts = filterContacts.map((contact) => (
     // Information that represents a contact
     <div class="listContactBox" key={contact.id}>
-      <li>{contact.name}</li>
-      <li>{contact.phone}</li>
-      <li>{contact.address.city}</li>
+      <p>{contact.name}</p>
+      <p>{contact.phone}</p>
+      <p>{contact.address.city}</p>
       <br />
     </div>
   ));
@@ -56,6 +57,7 @@ const App = () => {
         type="text"
         onChange={handleChange}
         value={searchValue}
+        style={{ width: 780 }}
       />
       <h3>{listContacts}</h3>
     </div>

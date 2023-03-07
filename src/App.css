@@ -7,6 +7,16 @@
 }
 
 .listContactBox {
-  
+  margin: auto;
+  width: 50%;
+  border: 3px solid lightgrey;
+  padding: 10px;
+  margin-bottom: 10px;
   font-family: 'Shantell Sans', cursive;
+  font-size: x-large;
+}
+
+.listContactBox:hover {
+  background-color: lightgray;
+  transition: 0.2s;
 }
