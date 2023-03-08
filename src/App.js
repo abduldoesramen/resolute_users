@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import "./index.css";
+import TextField from "@mui/material/TextField";
+import one from "./avatarnew.jpg";
 
 const App = () => {
   // Define hooks to use for setting/updating state variables
@@ -35,10 +38,11 @@ const App = () => {
   // Map users (list) into returnable list
   const listContacts = filterContacts.map((contact) => (
     // Information that represents a contact
-    <div key={contact.id}>
-      <li>{contact.name}</li>
-      <li>{contact.phone}</li>
-      <li>{contact.address.city}</li>
+    <div class="listContactBox" key={contact.id}>
+      <p>{contact.name}</p>
+      <p>{contact.phone}</p>
+      <p>{contact.address.city}</p>
+      <img src={one} alt="profile-logo-placeholder" />
       <br />
     </div>
   ));
@@ -46,13 +50,17 @@ const App = () => {
   // Return (render) listContacts and search bar
   return (
     <div>
-      <h3>{listContacts}</h3>
-      <input
+      <h1 class="titleText">Contacts</h1>
+      <TextField
+        id="outlined-basic"
+        label="Search contacts"
+        variant="outlined"
         type="text"
-        placeholder="Search Contacts"
         onChange={handleChange}
         value={searchValue}
+        style={{ width: 780 }}
       />
+      <h3>{listContacts}</h3>
     </div>
   );
 };
