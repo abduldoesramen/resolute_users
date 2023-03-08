@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import "./index.css";
 import TextField from "@mui/material/TextField";
-import Box from "@mui/material/Box";
+import one from "./avatarnew.jpg";
 
 const App = () => {
   // Define hooks to use for setting/updating state variables
@@ -42,6 +42,7 @@ const App = () => {
       <p>{contact.name}</p>
       <p>{contact.phone}</p>
       <p>{contact.address.city}</p>
+      <img src={one} alt="logo" />
       <br />
     </div>
   ));
