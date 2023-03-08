@@ -42,7 +42,7 @@ const App = () => {
       <p>{contact.name}</p>
       <p>{contact.phone}</p>
       <p>{contact.address.city}</p>
-      <img src={one} alt="logo" />
+      <img src={one} alt="profile-logo-placeholder" />
       <br />
     </div>
   ));
